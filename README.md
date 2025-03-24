@@ -1,10 +1,10 @@
 [![LICENSE](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-# Distributed AI Workload Management via Active Storage and dataClay
+# Distributed AI Workload Management via Active Storage and dataClay.
 
 ## Overview
 
-This repository demonstrates how to offload artificial intelligence (AI) workloads across distributed systems using active storage architectures. It leverages **dataClay** and **Docker** to orchestrate and manage model training across a client-server infrastructure.
+This repository demonstrates how to offload artificial intelligence (AI) workloads across distributed systems using active storage architectures. It leverages **[dataClay](https://dataclay.readthedocs.io/en/latest/)** and **Docker** to orchestrate and manage model training across a client-server infrastructure.
 
 
 
@@ -14,16 +14,20 @@ The dataset used in this repository is publicly available on Hugging Face:
 
 ---
 
-## 📊 Results
+## 📊 Offloading vs Standalone benchmark
 
+ 🧠 **Memory Usage Benchmark**: This chart compares memory consumption across different configurations using and not using dataClay (a distributed data management system)
 
-![Memory Usage Plot](Data/memory_usage_plot.png)
+<div align="center">
+  <img src="Data/memory_usage_plot.png" alt="Memory Usage" width="70%"/><br/>
+</div>
 
-**Runtimes:**
+ ⏱️  **Runtimes benchmark**: This chart visualizes the total execution time across baseline (an Edge device, e.g. OrangePI, a Mac) and offloaded (dataClay) setups (A high compute device).
 
-![Runtimes Plot](Data/runtimes_plot.png)
-
-
+<div align="center">
+  <img src="Data/runtimes_plot.png" alt="Runtimes" width="70%"/>
+</div>
+  
 ## 📦 Project Structure
 
 ### 🔧 Server-Side Training with dataClay
