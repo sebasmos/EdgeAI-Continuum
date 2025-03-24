@@ -14,6 +14,16 @@ The dataset used in this repository is publicly available on Hugging Face:
 
 ---
 
+## 📊 
+
+**Memory Usage:**
+
+![Memory Usage Plot](imgs/memory_usage_plot.png)
+
+**Runtimes:**
+
+![Runtimes Plot](imgs/runtimes_plot.png)
+
 
 ## 📦 Project Structure
 
