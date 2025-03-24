@@ -3,7 +3,7 @@ message: "If you use this software, please cite it using the following metadata.
 title: "Distributed AI Workload Management via Active Storage and dataClay"
 version: "1.0.0"
 doi: ""
-url: "https://github.com/sebasmos/continuum4ai"
+url: "https://github.com/sebasmos/EdgeAI-Continuum"
 authors:
   - family-names: "Cajas Ordóñez"
     given-names: "Sebastián Andrés"
@@ -20,4 +20,4 @@ authors:
   - family-names: "Queralt"
     given-names: "Anna"
 date-released: "2025-03-24"
-repository-code: "https://github.com/sebasmos/continuum4ai"
+repository-code: "https://github.com/sebasmos/EdgeAI-Continuum"
