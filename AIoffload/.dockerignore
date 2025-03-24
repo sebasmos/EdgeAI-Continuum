@@ -1,0 +1,7 @@
+Dockerfile
+venv/
+.git/
+.ipynb_checkpoints/
+dataset/
+model/
+best-weights.pt

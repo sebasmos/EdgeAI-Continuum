@@ -1,0 +1,55 @@
+version: "3"
+
+services:
+  dataclay-backend:
+    build: .
+    depends_on:
+      - redis
+    environment:
+      - DATACLAY_KV_HOST=redis
+      - DATACLAY_BACKEND_ID=9662bd3e-0844-4688-bba5-29cac7d83531
+    volumes:
+      - ./model:/usr/src/model:ro
+      - ./dataset:/usr/src/dataset:rw
+      - ./results:/usr/src/results:rw
+    command: python -m dataclay.backend
+
+  redis:
+    image: redis:latest
+
+  dataclay-mds:
+    build: .
+    depends_on:
+      - redis
+    environment:
+      - DATACLAY_KV_HOST=redis
+      - DATACLAY_PASSWORD=s3cret
+      - DATACLAY_USERNAME=testuser
+      - DATACLAY_DATASET=testdata
+    command: python -m dataclay.metadata
+
+  proxy:
+    build: .
+    depends_on:
+      - redis
+      - dataclay-mds
+    ports:
+      - 8676:8676
+    environment:
+      - DATACLAY_KV_HOST=redis
+      - DATACLAY_PROXY_MDS_HOST=dataclay-mds
+    command: python -m dataclay.proxy
+
+  # Metrics utilisation model
+  metrics_creation:
+    build: .
+    depends_on:
+      - dataclay-backend
+    volumes:
+      - ./model:/usr/src/model:ro
+      - ./dataset:/usr/src/dataset:rw
+      - ./results:/usr/src/results:rw
+      - ./main_metrics_creation.py:/usr/src/main_metrics_creation.py:ro
+    command: python /usr/src/main_metrics_creation.py
+    restart: on-failure
+  

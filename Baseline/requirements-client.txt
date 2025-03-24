@@ -1,0 +1,6 @@
+git+https://github.com/bsc-dom/dataclay@icos-ml
+
+numpy==1.24.2
+notebook==6.5.4
+pandas>=1.4.3,<2.0.0
+memory-profiler
