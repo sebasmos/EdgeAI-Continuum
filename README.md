@@ -6,16 +6,16 @@
 
 This repository demonstrates how to offload artificial intelligence (AI) workloads across distributed systems using active storage architectures. It leverages **dataClay** and **Docker** to orchestrate and manage model training across a client-server infrastructure.
 
----
 
-## 📦 Project Structure
-
-## Dataset
 
 The dataset used in this repository is publicly available on Hugging Face:
 
 - [Live CPU Utilization Dataset](https://huggingface.co/datasets/ICOS-AI/live_cpu_utilization)
 
+---
+
+
+## 📦 Project Structure
 
 ### 🔧 Server-Side Training with dataClay
 
