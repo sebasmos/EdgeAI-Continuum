@@ -13,6 +13,13 @@ services:
       - ./dataset:/usr/src/dataset:rw
       - ./results:/usr/src/results:rw
     command: python -m dataclay.backend
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
 
   redis:
     image: redis:latest
