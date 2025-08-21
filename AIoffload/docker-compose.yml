@@ -13,6 +13,7 @@ services:
       - ./dataset:/usr/src/dataset:rw
       - ./results:/usr/src/results:rw
     command: python -m dataclay.backend
+    # To run on a machine with NVIDIA GPU
     deploy:
       resources:
         reservations:
